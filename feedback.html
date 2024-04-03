@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="fb_style.css">
+        <title>Feed Hope Project</title>
+    </head>
+
+    <body>
+        <div class="main">
+            <div class="navbar">
+                <h2 class="icon"><img src="images/@logo4.png" alt="Feed Hope Logo"></h2>
+                <div class="menu">
+                    <ul>
+                        <li><a href="/homepage.html">Home</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">User Profile</a></li>
+                        <li><a href="/feedback.html" class="active">Feedback</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="#">Our Team</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <div class="container2">
+                    <form id="feedbackForm" action="mailto:damsihak@gmail.com" method="post" enctype="text/plain">
+                        <h1>Give your Feedback</h1>
+                        <div class="user">
+                            <input type="text" id="name" name="Name" placeholder="Full name" required>
+                        </div>
+                        <div class="id">
+                            <input type="email" id="email" name="Email" placeholder="Email address" required>
+                        </div>
+                        <div class="quality">
+                            <p>How would you rate the quality of the site?</p>
+                            <label><input type="radio" name="Quality" value="poor">Poor</label>
+                            <label><input type="radio" name="Quality" value="fair">Fair</label>
+                            <label><input type="radio" name="Quality" value="good">Good</label>
+                            <label><input type="radio" name="Quality" value="excellent">Excellent</label>
+                        </div>
+                        <textarea cols="15" rows="5" name="Opinions" placeholder="Enter your opinions and suggestions here..."></textarea>
+                        <button >Submit</button>
+                    </form>
+                    <button id="previewBtn">Preview</button>
+                    <div id="previewSection" style="display: none;">
+                        <h2>Feedback Preview</h2>
+                        <div id="previewContent"></div>
+                        <button id="editBtn">Edit</button>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <p>Designed and developed by G24-01</p>
+                <p>Page Editors: [List of Page Editor Names with Links]</p>
+            </footer>
+        </div>
+
+        <script>
+            const previewBtn = document.getElementById('previewBtn');
+            const feedbackForm = document.getElementById('feedbackForm');
+            const previewSection = document.getElementById('previewSection');
+            const previewContent = document.getElementById('previewContent');
+            const editBtn = document.getElementById('editBtn');
+
+            function showConfirmationMessage() {
+                alert('Thank you for your feedback! Your comment has been received.');
+            }
+    
+            previewBtn.addEventListener('click', function() {
+                const formData = new FormData(feedbackForm);
+                let previewHTML = '<h3>Name: ' + formData.get('Name') + '</h3>';
+                previewHTML += '<h3>Email: ' + formData.get('Email') + '</h3>';
+                previewHTML += '<h3>Quality: ' + formData.get('Quality') + '</h3>';
+                previewHTML += '<h3>Opinions and Suggestions:</h3>';
+                previewHTML += '<p>' + formData.get('Opinions') + '</p>';
+                previewContent.innerHTML = previewHTML;
+                previewSection.style.display = 'block';
+            });
+    
+            editBtn.addEventListener('click', function() {
+                previewSection.style.display = 'none';
+            });
+
+            feedbackForm.addEventListener('submit', function(event) {
+                    showConfirmationMessage(); // Display confirmation message
+            });
+        </script>
+    </body>
+</html>

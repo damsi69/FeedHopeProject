@@ -1,0 +1,292 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0.5)), url(images/2.jpg);
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.menu ul li a{
+    font-family:"Arial";
+    font-size: 16px;
+    color: #ecf0f1;
+    text-decoration: none;
+    position: relative;
+}
+
+.navbar{
+    background-color: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 25px 12%;
+}
+
+.icon{
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.icon img{
+    height: 70px;
+}
+
+.menu ul{
+    list-style: none;
+}
+
+.menu ul li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.menu ul li a::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    bottom: -5px;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.menu ul li a:hover::after,
+.menu ul li a.active::after{
+    background-color: #0088a9;
+}
+
+.menu ul li a:hover{
+    color: #0088a9;
+} 
+
+.content{
+    max-width: 100%;
+    width: 1200px;
+    height: auto;
+    margin: auto;
+    color: #fff;
+    position: relative;
+    clear: left;
+}
+
+.content .par{
+    padding-left: 20px;
+    padding-top: 2%;
+    padding-bottom: 25px;
+    font-family: Arial;
+    letter-spacing: 1.2px;
+    line-height: 30px;
+}
+
+.content h1{
+    font-family: 'Trebuchet MS';
+    font-size: 50px;
+    padding-left: 17px;
+    margin-top: 4%;
+    letter-spacing: 2px;
+}
+
+.content .donate_btn {
+    font-family: "Trebuchet MS";
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    display: block;
+    background: #0088a9;
+    border: none;
+    margin: 10px 0;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    text-decoration: none; 
+}
+
+.content .donate_btn:hover{
+    background-color: white;
+    color: black;
+}
+
+.container{
+    float: left;
+    display: flex;
+    position: relative;
+    top: 30px;
+}
+
+.container a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.card{
+    height: 250px;
+    margin: 10px;
+    box-shadow: 5px 5px 20px black;
+    overflow: hidden;
+}
+
+
+.card_img{
+    height: 250px;
+    width: 350px;
+    border-radius: 3px;
+
+}
+
+.intro{
+    height: 110px;
+    width: 350px;
+    padding: 6px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 10px;
+    background-color: rgba(27, 27, 27, 0.5);
+}
+
+.intro h1{
+    margin: 10px;
+    font-size: 25px;
+}
+
+.intro p{
+    font-size: 20px;
+    margin: 20px;
+    margin-top: 1px;
+    font-family: "Arial";
+    visibility: hidden;
+    opacity: 0;
+}
+
+.card:hover{
+    cursor: pointer;
+}
+
+.card:hover .intro{
+    height: 220px;
+    bottom: 10px;
+    background-color: black;
+}
+
+.card:hover .intro p{
+    visibility: visible;
+    opacity: 1;
+}
+
+.donate {
+    font-family: "Arial";
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 100px;
+    clear: both;
+}
+
+.selection {
+    margin-bottom: 10px;
+}
+
+.selection p {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.value {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.money {
+    padding: 8px 16px;
+    background-color: #0088a9;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 15px;
+}
+
+.money:hover {
+    background-color: #005d72;
+}
+
+.money.selected {
+    background-color: #005d72;
+}
+
+.input {
+    margin-bottom: 10px;
+}
+
+.input p {
+    margin-top: 20px;
+    margin-bottom:5px;
+    font-size: 18px;
+    color: #fff;
+}
+
+
+.input input {
+    width: 580%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+.donate_now p {
+    font-size: 16px;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.donate_now button {
+    padding: 10px 20px;
+    background-color: #0088a9;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.donate_now button:hover {
+    background-color: #005d72;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    padding-top: 5px;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    border-top: 2px solid #fff; /* Add a border at the top */
+}
+
+.footer p {
+    font-family: "Arial";
+    margin-top: 10px;
+    font-size: 16px;
+}
